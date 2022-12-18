@@ -22,7 +22,8 @@ import travel
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('travel.urls')) # create a url path to travel app.create a url file in travel app.then goto app url
+    path('', include('travel.urls')), # create a url path to travel app.create a url file in travel app.then goto app url
+    path('accounts/',include('accounts.urls'))
     
 ]
 
