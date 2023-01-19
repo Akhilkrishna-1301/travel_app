@@ -10,17 +10,18 @@ from . models import place
 
 def fun(request):
     obj={'dept':place.objects.all()}
-    # obj=place()
-    # obj.name="python"
-    # obj.desc="python  developer"
     return render(request,"index.html",obj)
 
 
+def detail(request,prod_id):
+    product1={'product':place.objects.get(id=prod_id)}
+    return render(request,"detail.html",product1)
 
+    # product1=place.objects.get(id=prod_id)
+    # return render(request,'detail.html',{'product':product1})
 
-
-def addition(request):
-    number=int(request.POST["num1"])
-    num=int(request.POST["num2"])
-    num3=number+num
-    return render(request, "result.html",{"add":num3})
+# def addition(request):
+#     number=int(request.POST["num1"])
+#     num=int(request.POST["num2"])
+#     num3=number+num
+#     return render(request, "result.html",{"add":num3})
